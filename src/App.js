@@ -4,8 +4,8 @@ import {
   Switch,
   Route, BrowserRouter
 } from "react-router-dom";
- import Index from './components/layouts/Index';
 import Navbar from './components/layouts/Navbar';
+import Index from './components/layouts/Index';
 
 
 
@@ -17,7 +17,7 @@ class App extends Component{
         <Navbar />
           <div className="container">
             <Switch>
-              <Route exact path="/index">
+              <Route exact path="/">
                 <Index />
               </Route>
             </Switch>
