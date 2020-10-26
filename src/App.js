@@ -7,6 +7,7 @@ import {
 import Navbar from './components/layouts/Navbar';
 import Index from './components/layouts/Index';
 import { Provider } from './context';
+import Lyrics from './components/tracks/Lyrics';
 
 
 
@@ -21,6 +22,9 @@ class App extends Component{
               <Switch>
                 <Route exact path="/">
                   <Index />
+                </Route>
+                <Route exact path="/lyrics/track/:id">
+                  <Lyrics />
                 </Route>
               </Switch>
             </div>
