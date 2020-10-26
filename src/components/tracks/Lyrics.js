@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Axios from "axios";
+import Spinner from "../layouts/Spinner";
+import { Link } from "react-router-dom";
 
 class Lyrics extends Component {
   state = {
@@ -25,10 +27,17 @@ class Lyrics extends Component {
 
   render() {
    const { track, lyrics } = this.state;
-   if (track === underfined) {
-       
+      if (track === undefined || lyrics === undefined || Object.keys(track).length === 0 || Object.keys(lyrics).length === 0) {
+       return <Spinner />
    } else {
-       
+       <React.Fragment>
+           <Link to="/" className="btn btn-dark btn-sm mb-4">Go Back</Link>
+           <div className="card">
+            <div className="card-header">
+   {track.track_name} by <span className="text-secondary">{track.artist_name}</span>
+            </div>
+           </div>
+       </React.Fragment>
    }
   }
 }
